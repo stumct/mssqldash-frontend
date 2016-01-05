@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {resizeWindow} from '../../redux/actions/index.js'
 import ContentContainer from '../Content/ContentContainer.jsx'
 import NavBarContainer from '../NavBar/NavBarContainer.jsx'
-import NavMenu from '../NavBar/NavMenu.jsx'
+import NavSideMenu from '../NavBar/NavSideMenu.jsx'
 
 class App extends React.Component {
   constructor(props){
@@ -24,7 +24,7 @@ class App extends React.Component {
       <div>
         <NavBarContainer />
         <ContentContainer>
-          <div className="navmenu-container col-sm-3 col-lg-2">{appWindow.width >= 768 ? <NavMenu /> : null}</div>
+          <div className="navmenu-container col-sm-3 col-lg-2">{appWindow.width >= 768 ? <NavSideMenu /> : null}</div>
           <div className="col-sm-9 col-lg-10">{this.props.children}</div>
         </ContentContainer>
 

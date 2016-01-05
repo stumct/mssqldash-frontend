@@ -10,7 +10,29 @@ import { syncReduxAndRouter } from 'redux-simple-router';
 import { reducers, middleware } from './redux/index.js';
 import { App, Home, Foo, Bar } from './components/Examples/index.js';
 
-let initialState = {navbar:{navMenuVisible:false}};
+let initialState = {
+  navbar: {
+    navMenuVisible: false,
+    navMenuItems: [
+      {
+        id:0,
+        linkTo: 'home',
+        linkText: 'Dashboard',
+        iconClass: 'fa fa-dashboard fa-fw'
+      }, {
+        id:1,
+        linkTo: 'tables',
+        linkText: 'Tables',
+        iconClass: 'fa fa-table fa-fw"'
+      }, {
+        id:2,
+        linkTo: 'forms',
+        linkText: 'Forms',
+        iconClass: 'fa fa-edit fa-fw'
+      }
+    ]
+  }
+};
 
 let createStoreWithMiddleware = applyMiddleware(middleware.logger)(createStore);
 let store = createStoreWithMiddleware(reducers, initialState);
@@ -22,7 +44,7 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
-        <Route path="foo" component={Foo}/>
+        <Route path="home" component={Home}/>
         <Route path="bar" component={Bar}/>
       </Route>
     </Router>

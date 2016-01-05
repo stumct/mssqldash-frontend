@@ -2,11 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux'
 import NavMenuList from './NavMenuList.jsx'
 
-const NavMenu = (props) => {
+const NavSideMenu = (props) => {
   const {appWindow} = props;
   return (
     <div className="navbar-default sidebar" role="navigation">
-      <div className="sidebar-nav navbar-collapse">
+      <div style={{minHeight:appWindow.height-51}} className="sidebar-nav navbar-collapse">
         <NavMenuList />
         </div>
 
@@ -21,4 +21,4 @@ function filterState(state){
   }
 }
 
-export default connect(filterState)(NavMenu);
+export default connect(filterState)(NavSideMenu);

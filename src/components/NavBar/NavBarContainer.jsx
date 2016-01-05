@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {navToggleMenu} from '../../redux/actions/index.js'
 import NavBar from './NavBar.jsx'
 import NavMenu from './NavMenu.jsx'
+import NavSideMenu from './NavSideMenu.jsx'
 
 class NavBarContainer extends React.Component {
   constructor(props){
