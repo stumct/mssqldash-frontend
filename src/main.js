@@ -34,7 +34,7 @@ let initialState = {
   }
 };
 
-let createStoreWithMiddleware = applyMiddleware(middleware.logger)(createStore);
+let createStoreWithMiddleware = applyMiddleware(middleware.logger, middleware.thunk)(createStore);
 let store = createStoreWithMiddleware(reducers, initialState);
 const history = createHashHistory();
 syncReduxAndRouter(history, store);

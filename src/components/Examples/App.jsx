@@ -27,8 +27,6 @@ class App extends React.Component {
           <div className="navmenu-container col-sm-3 col-lg-2">{appWindow.width >= 768 ? <NavSideMenu /> : null}</div>
           <div className="col-sm-9 col-lg-10">{this.props.children}</div>
         </ContentContainer>
-
-
       </div>
     )
   }
